@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ThermalCast for iOS 隐私政策 / Privacy Policy</title>
+<title>ThermalCast for iOS Privacy Policy</title>
 <meta name="description" content="ThermalCast for iOS privacy policy. Written strictly from the app's code. 12 languages.">
 <style>
   :root{
@@ -84,21 +84,45 @@
 
 <header class="hero">
   <div class="inner">
-    <span class="badge">隐私政策 · Privacy Policy</span>
-    <h1>ThermalCast for iOS 隐私政策</h1>
-    <p class="meta">最后更新 / Last updated：2026-10-22　|　iOS 专属 / iOS only　|　12 languages</p>
+    <span class="badge">Privacy Policy · 隐私政策</span>
+    <h1>ThermalCast for iOS Privacy Policy</h1>
+    <p class="meta">Last updated 2026-10-22　|　iOS only　|　12 languages</p>
   </div>
 </header>
 
 <div class="wrap">
 
-  <div class="scope"><p><strong>适用范围 / Scope.</strong> 本页面只覆盖 <strong>ThermalCast for iOS</strong>。文中每一句话都以该 App 的实际代码为准；代码中不存在的行为，我们不会写进本政策。<br>This page covers <strong>ThermalCast for iOS</strong> only. Every statement reflects the actual behaviour of the app's code; we do not claim practices the app does not implement.</p><p><strong>Android 版</strong>（飞伞天气 <code>com.thermalcast.app</code>）的政策见 <a href="./">合并版</a>。<br>The policy for the <strong>Android</strong> app is in the <a href="./">combined version</a>.</p><p><strong>App 内也有完整正文。</strong> 设置 › 数据与隐私 › 隐私政策，共 13 个界面语言版本。<br>The full text is also in the app: Settings › Data &amp; Privacy › Privacy Policy, in all 13 interface languages.</p></div>
+  <div class="scope"><p><strong>Scope.</strong> This page covers <strong>ThermalCast for iOS</strong> only. Every statement reflects the actual behaviour of the app's code; we do not claim practices the app does not implement.<br><strong>适用范围。</strong>本页面只覆盖 <strong>ThermalCast for iOS</strong>。文中每一句话都以该 App 的实际代码为准；代码中不存在的行为，我们不会写进本政策。</p><p><strong>Android.</strong> The policy for the Android app「飞伞天气」(<code>com.thermalcast.app</code>) is in the <a href="./">combined version</a>.<br><strong>Android 版。</strong>（飞伞天气 <code>com.thermalcast.app</code>）的政策见 <a href="./">合并版</a>。</p><p><strong>Also available in the app.</strong> Settings › Data &amp; Privacy › Privacy Policy, in all 13 interface languages.<br><strong>App 内也有完整正文。</strong> 设置 › 数据与隐私 › 隐私政策，共 13 个界面语言版本。</p></div>
 
   <nav class="langnav">
-    <div class="label">语言 / Language</div>
-    <a href="#zh">简体中文</a><a href="#zh-Hant">繁體中文</a><a href="#en">English</a><a href="#de">Deutsch</a><a href="#fr">Français</a><a href="#it">Italiano</a><a href="#es">Español</a><a href="#pt">Português</a><a href="#tr">Türkçe</a><a href="#ja">日本語</a><a href="#ko">한국어</a><a href="#sl">Slovenščina</a>
+    <div class="label">Language · 语言</div>
+    <a href="#en">English</a><a href="#zh">简体中文</a><a href="#zh-Hant">繁體中文</a><a href="#de">Deutsch</a><a href="#fr">Français</a><a href="#it">Italiano</a><a href="#es">Español</a><a href="#pt">Português</a><a href="#tr">Türkçe</a><a href="#ja">日本語</a><a href="#ko">한국어</a><a href="#sl">Slovenščina</a>
   </nav>
 
+  <section class="lang" id="en">
+<h2>English</h2>
+<p class="meta">Last updated 2026-10-22</p>
+<p class="lead">Anything that can be processed on your device stays on your device. ThermalCast for iOS has no account, no registration and no server-side copy of anything.</p>
+<h3>What we do not do</h3>
+<ul><li>No account — no sign-up, and we never ask for your name, phone number or email. There is no user database.</li><li>No advertising SDK and no advertising identifier: no tracking, no profiling, no data sold or shared with data brokers. The tracking permission (IDFA) is never requested.</li><li>No third-party analytics or crash-reporting SDK. The app links only Apple system frameworks and the bundled MapLibre map engine, which declares no tracking and no collected data types.</li><li>No Bluetooth — the app never uses Bluetooth and never pairs with external instruments.</li><li>No payment SDK of our own — subscriptions run through Apple's StoreKit 2. We never see your card or bank details.</li><li>No server of our own — nothing is uploaded to infrastructure we operate.</li></ul>
+<h3>What leaves your device</h3>
+<ul><li>Forecasts — the coordinates of a site are sent over HTTPS to Open-Meteo (api.open-meteo.com) when you open that site's weather, and when a background weather check runs for a site you have saved.</li><li>Elevation lookup — when a site's altitude is filled in, its coordinates are sent to the Open-Meteo elevation endpoint (/v1/elevation).</li><li>Map and terrain tiles — the map style and vector tiles are requested from OpenFreeMap, and terrain shading tiles from the public AWS Terrain Tiles dataset. Such requests reveal the approximate area you are looking at.</li><li>Subscriptions — billed and validated entirely by Apple through the App Store. We receive a subscription status only (product and expiry), never your payment details.</li><li>These requests carry no account, name, device or advertising identifier — only coordinates. Nothing else leaves your device.</li></ul>
+<h3>What stays on your device</h3>
+<ul><li>Flight sessions and tracks — stored in the on-device database, never uploaded.</li><li>Launch sites you create or import, and the airspace set, which ships with the app and is read offline.</li><li>Sensor readings — the barometric sensor, motion and compass are processed in real time for the vario and for takeoff and landing detection. They are never recorded or uploaded.</li><li>Pilot name and glider — optional, kept in your preferences and written only into the header of IGC files you export. Leave them empty and your flights stay anonymous.</li><li>Preferences, notification settings and the widget snapshot — the home-screen widget reads a small weather summary from a private App Group container shared with the app. It never leaves the device.</li></ul>
+<h3>Permissions, and what happens if you decline</h3>
+<ul><li>Location, When In Use — show weather for your position, centre the map and record your track.</li><li>Location, Always — optional; keeps recording while the screen is off so the log stays complete.</li><li>Motion &amp; Fitness — reads the barometric sensor for climb and sink rate.</li><li>Camera — used only to scan a QR code that transfers launch sites from another phone. Frames are decoded on the device and never saved or uploaded.</li><li>Notifications — optional, for condition alerts and the morning briefing, composed on the device.</li></ul>
+<p>Declining any of them leaves the rest of the app working. Without location only flight recording stops, and you can still add a site by typing its coordinates.</p>
+<h3>Retention and your rights</h3>
+<ul><li>Flight logs and sites stay on this device until you delete them or uninstall the app. Settings › Data &amp; privacy › Delete all flight records clears every session, track and per-second log immediately and permanently.</li><li>Uninstalling ThermalCast erases all local data.</li><li>A backup may copy this local database into your own storage — iCloud or a computer backup. That backup is managed by Apple and we cannot read it.</li><li>You can withdraw any permission at any time in iOS Settings › ThermalCast.</li><li>Questions, or a deletion request you cannot carry out in the app: chengjmx@gmail.com</li></ul>
+<h3>Children</h3>
+<p>ThermalCast is not directed to children under 13, and we do not knowingly collect personal information from them. There is no account and no sign-up, so nothing personal is collected in the first place.</p>
+<h3>Third-party services and data sources</h3>
+<ul><li>Open-Meteo (api.open-meteo.com) — weather forecast, wind profile and terrain elevation. Receives site coordinates. Data licensed CC BY 4.0; elevation values are derived from Copernicus DEM GLO-90 © EU-ESA.</li><li>OpenFreeMap (tiles.openfreemap.org) — map style and vector tiles. Map data © OpenStreetMap contributors. Receives tile requests, which can reveal the approximate area you are looking at.</li><li>AWS Terrain Tiles (s3.amazonaws.com) — a public elevation dataset used for terrain shading on the map. Receives tile requests.</li><li>Apple App Store — subscription purchase and validation through StoreKit 2. Apple handles the payment and the receipt; we receive only the entitlement status.</li><li>Airspace — the set bundled with the app is derived from openAIP (openaip.net) and is read offline. No request is made for it.</li><li>Nothing else. There is no analytics, no crash reporting, no advertising and no other network service.</li></ul>
+<h3>Flight safety</h3>
+<p>Weather data, flight scores and vario alarms are advisory only and must never be the sole basis for a flight decision. Paragliding carries inherent risk: always rely on the actual conditions, local regulations and your own judgement.</p>
+<h3>Changes to this policy</h3>
+<p>The current text is always available at https://jecry.github.io/thermalcast-privacy/ios.html. If the kind of data that leaves your device ever changes, this page and the in-app text are updated together, and the date at the top changes with them.</p>
+</section>
   <section class="lang" id="zh">
 <h2>简体中文</h2>
 <p class="meta">最后更新：2026-10-22</p>
@@ -146,30 +170,6 @@
 <p>天氣資料、飛行評分與變率儀警報僅供參考，絕不能作為飛行決策的唯一依據。飛行傘運動本身存在風險：請始終依據實際天氣狀況、當地法規與自己的判斷。</p>
 <h3>本政策的變更</h3>
 <p>最新文字始終發布於 https://jecry.github.io/thermalcast-privacy/ios.html。若離開裝置的資料類型發生變化，該頁面與 App 內文案會同步更新，頂部的日期也會隨之改變。</p>
-</section>
-  <section class="lang" id="en">
-<h2>English</h2>
-<p class="meta">Last updated 2026-10-22</p>
-<p class="lead">Anything that can be processed on your device stays on your device. ThermalCast for iOS has no account, no registration and no server-side copy of anything.</p>
-<h3>What we do not do</h3>
-<ul><li>No account — no sign-up, and we never ask for your name, phone number or email. There is no user database.</li><li>No advertising SDK and no advertising identifier: no tracking, no profiling, no data sold or shared with data brokers. The tracking permission (IDFA) is never requested.</li><li>No third-party analytics or crash-reporting SDK. The app links only Apple system frameworks and the bundled MapLibre map engine, which declares no tracking and no collected data types.</li><li>No Bluetooth — the app never uses Bluetooth and never pairs with external instruments.</li><li>No payment SDK of our own — subscriptions run through Apple's StoreKit 2. We never see your card or bank details.</li><li>No server of our own — nothing is uploaded to infrastructure we operate.</li></ul>
-<h3>What leaves your device</h3>
-<ul><li>Forecasts — the coordinates of a site are sent over HTTPS to Open-Meteo (api.open-meteo.com) when you open that site's weather, and when a background weather check runs for a site you have saved.</li><li>Elevation lookup — when a site's altitude is filled in, its coordinates are sent to the Open-Meteo elevation endpoint (/v1/elevation).</li><li>Map and terrain tiles — the map style and vector tiles are requested from OpenFreeMap, and terrain shading tiles from the public AWS Terrain Tiles dataset. Such requests reveal the approximate area you are looking at.</li><li>Subscriptions — billed and validated entirely by Apple through the App Store. We receive a subscription status only (product and expiry), never your payment details.</li><li>These requests carry no account, name, device or advertising identifier — only coordinates. Nothing else leaves your device.</li></ul>
-<h3>What stays on your device</h3>
-<ul><li>Flight sessions and tracks — stored in the on-device database, never uploaded.</li><li>Launch sites you create or import, and the airspace set, which ships with the app and is read offline.</li><li>Sensor readings — the barometric sensor, motion and compass are processed in real time for the vario and for takeoff and landing detection. They are never recorded or uploaded.</li><li>Pilot name and glider — optional, kept in your preferences and written only into the header of IGC files you export. Leave them empty and your flights stay anonymous.</li><li>Preferences, notification settings and the widget snapshot — the home-screen widget reads a small weather summary from a private App Group container shared with the app. It never leaves the device.</li></ul>
-<h3>Permissions, and what happens if you decline</h3>
-<ul><li>Location, When In Use — show weather for your position, centre the map and record your track.</li><li>Location, Always — optional; keeps recording while the screen is off so the log stays complete.</li><li>Motion &amp; Fitness — reads the barometric sensor for climb and sink rate.</li><li>Camera — used only to scan a QR code that transfers launch sites from another phone. Frames are decoded on the device and never saved or uploaded.</li><li>Notifications — optional, for condition alerts and the morning briefing, composed on the device.</li></ul>
-<p>Declining any of them leaves the rest of the app working. Without location only flight recording stops, and you can still add a site by typing its coordinates.</p>
-<h3>Retention and your rights</h3>
-<ul><li>Flight logs and sites stay on this device until you delete them or uninstall the app. Settings › Data &amp; privacy › Delete all flight records clears every session, track and per-second log immediately and permanently.</li><li>Uninstalling ThermalCast erases all local data.</li><li>A backup may copy this local database into your own storage — iCloud or a computer backup. That backup is managed by Apple and we cannot read it.</li><li>You can withdraw any permission at any time in iOS Settings › ThermalCast.</li><li>Questions, or a deletion request you cannot carry out in the app: chengjmx@gmail.com</li></ul>
-<h3>Children</h3>
-<p>ThermalCast is not directed to children under 13, and we do not knowingly collect personal information from them. There is no account and no sign-up, so nothing personal is collected in the first place.</p>
-<h3>Third-party services and data sources</h3>
-<ul><li>Open-Meteo (api.open-meteo.com) — weather forecast, wind profile and terrain elevation. Receives site coordinates. Data licensed CC BY 4.0; elevation values are derived from Copernicus DEM GLO-90 © EU-ESA.</li><li>OpenFreeMap (tiles.openfreemap.org) — map style and vector tiles. Map data © OpenStreetMap contributors. Receives tile requests, which can reveal the approximate area you are looking at.</li><li>AWS Terrain Tiles (s3.amazonaws.com) — a public elevation dataset used for terrain shading on the map. Receives tile requests.</li><li>Apple App Store — subscription purchase and validation through StoreKit 2. Apple handles the payment and the receipt; we receive only the entitlement status.</li><li>Airspace — the set bundled with the app is derived from openAIP (openaip.net) and is read offline. No request is made for it.</li><li>Nothing else. There is no analytics, no crash reporting, no advertising and no other network service.</li></ul>
-<h3>Flight safety</h3>
-<p>Weather data, flight scores and vario alarms are advisory only and must never be the sole basis for a flight decision. Paragliding carries inherent risk: always rely on the actual conditions, local regulations and your own judgement.</p>
-<h3>Changes to this policy</h3>
-<p>The current text is always available at https://jecry.github.io/thermalcast-privacy/ios.html. If the kind of data that leaves your device ever changes, this page and the in-app text are updated together, and the date at the top changes with them.</p>
 </section>
   <section class="lang" id="de">
 <h2>Deutsch</h2>
@@ -390,8 +390,8 @@
 
   <footer>
     ThermalCast for iOS ·
-    本页面可自由引用，用作 App Store Connect 的隐私政策链接。<br>
-    This page may be freely linked as the privacy policy URL in App Store Connect.
+    This page may be freely linked as the privacy policy URL in App Store Connect.<br>
+    本页面可自由引用，用作 App Store Connect 的隐私政策链接。
   </footer>
 
 </div>
