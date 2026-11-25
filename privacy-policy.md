@@ -1,6 +1,6 @@
 # ThermalCast 隐私政策 / Privacy Policy
 
-**最后更新 / Last updated：2026-10-21**
+**最后更新 / Last updated：2026-11-25**
 **适用范围：** Android「飞伞天气」`com.thermalcast.app` 与 iOS「ThermalCast」
 
 两版共用同一套数据处理逻辑，平台差异已在正文中逐条标注（iOS / Android）。
@@ -21,10 +21,10 @@
 - 没有第三方统计或崩溃上报 SDK。
 - 不使用蓝牙 —— App 从不申请蓝牙权限，也从不与外部仪器配对。
 - 不读取追踪用设备标识 —— Android 侧不读 Android ID、IMEI、广告标识符；iOS 侧从不申请「允许 App 请求追踪」（IDFA）。
-- 没有自有服务器 —— 没有任何数据会上传到我们运营的服务器。
+- 自有边缘服务 —— 天气请求会经我们运营的边缘服务（tinycraftlabhq.com）转发到 Open-Meteo；该服务只临时缓存天气响应以节省流量，不留存、不关联、不追踪任何个人数据。
 
 ### 会离开设备的数据
-- 天气预报 —— 会通过 HTTPS 把场地坐标发送给 Open-Meteo（api.open-meteo.com）以获取预报；回填场地海拔时会调用其高程接口。
+- 天气预报 —— 场地坐标经 HTTPS 发给我们运营的边缘服务（tinycraftlabhq.com），再由它转发给 Open-Meteo（api.open-meteo.com）以获取预报；回填场地海拔时仍直接调用其高程接口。
 - 地图与地形瓦片 —— 地图瓦片来自 OpenFreeMap，地形晕渲来自公开的 AWS Terrain Tiles 数据集。这类请求会暴露你正在查看的大致区域。
 - 购买（仅 iOS）—— 订阅完全由 Apple 通过 App Store 计费与校验。我们只拿到订阅状态，永远不会拿到你的支付信息。Android 版当前免费，且未初始化任何支付 SDK。
 - 这些请求不含账号、姓名、设备或广告标识符，只有坐标。除此之外没有任何数据离开你的设备。
@@ -82,10 +82,10 @@ ThermalCast 不面向 13 岁以下儿童，我们也不会有意收集他们的�
 - 沒有第三方統計或當機回報 SDK。
 - 不使用藍牙 —— App 從不申請藍牙權限，也從不與外部儀器配對。
 - 不讀取追蹤用裝置識別碼 —— Android 端不讀 Android ID、IMEI、廣告識別碼；iOS 端從不申請「允許 App 要求追蹤」（IDFA）。
-- 沒有自有伺服器 —— 沒有任何資料會上傳到我們營運的伺服器。
+- 自有邊緣服務 —— 天氣請求會經我們營運的邊緣服務（tinycraftlabhq.com）轉送至 Open-Meteo；該服務僅暫存天氣回應以節省流量，不留存、不關聯、不追蹤任何個人資料。
 
 ### 會離開裝置的資料
-- 天氣預報 —— 會透過 HTTPS 把場地座標傳送給 Open-Meteo（api.open-meteo.com）以取得預報；回填場地海拔時會呼叫其高程介面。
+- 天氣預報 —— 場地座標經 HTTPS 傳送給我們營運的邊緣服務（tinycraftlabhq.com），再由它轉送至 Open-Meteo（api.open-meteo.com）以取得預報；回填場地海拔時仍直接呼叫其高程介面。
 - 地圖與地形圖磚 —— 地圖圖磚來自 OpenFreeMap，地形暈渲來自公開的 AWS Terrain Tiles 資料集。這類請求會透露你正在查看的大致區域。
 - 購買（僅 iOS）—— 訂閱完全由 Apple 透過 App Store 計費與驗證。我們只取得訂閱狀態，永遠不會取得你的付款資訊。Android 版目前免費，且未初始化任何支付 SDK。
 - 這些請求不含帳號、姓名、裝置或廣告識別碼，只有座標。除此之外沒有任何資料離開你的裝置。
@@ -143,10 +143,10 @@ ThermalCast 不面向 13 歲以下兒童，我們也不會有意收集他們的�
 - No third-party analytics or crash-reporting SDK.
 - No Bluetooth — the app never asks for Bluetooth access and never pairs with external instruments.
 - No identifiers used for tracking — we do not read Android ID, IMEI or the advertising ID on Android, and we never request the iOS tracking permission (IDFA).
-- No server of our own — nothing is uploaded to infrastructure we operate.
+- Own edge service — forecast requests are relayed through our edge service (tinycraftlabhq.com) to Open-Meteo. It only temporarily caches weather responses to save bandwidth; it stores, links or tracks no personal data.
 
 ### What leaves your device
-- Forecasts — the coordinates of a site are sent over HTTPS to Open-Meteo (api.open-meteo.com) to fetch the forecast, and to its elevation endpoint when a site altitude is filled in.
+- Forecasts — the coordinates of a site are sent over HTTPS to our edge service (tinycraftlabhq.com), which relays them to Open-Meteo (api.open-meteo.com) to fetch the forecast. Elevation lookup still contacts Open-Meteo directly when a site altitude is filled in.
 - Map and terrain tiles — tiles are requested from OpenFreeMap and terrain shading from the public AWS Terrain Tiles dataset. Such requests can reveal the approximate area you are looking at.
 - Purchases (iOS only) — subscriptions are billed and validated entirely by Apple through the App Store. We receive a subscription status only, never your payment details. The Android version is currently free and initialises no payment SDK.
 - These requests carry no account, name, device or advertising identifier — only coordinates. Nothing else leaves your device.
@@ -204,10 +204,10 @@ The current text is always available at https://jecry.github.io/thermalcast-priv
 - Kein Analyse- oder Absturzbericht-SDK von Drittanbietern.
 - Kein Bluetooth — die App fragt nie nach Bluetooth-Zugriff und koppelt sich nie mit externen Instrumenten.
 - Keine Kennungen fürs Tracking — auf Android lesen wir keine Android-ID, IMEI oder Werbe-ID, und auf iOS fordern wir nie die Tracking-Erlaubnis (IDFA).
-- Kein eigener Server — nichts wird auf Infrastruktur hochgeladen, die wir betreiben.
+- Eigener Edge-Dienst — Wetteranfragen werden über unseren Edge-Dienst (tinycraftlabhq.com) an Open-Meteo weitergeleitet. Er speichert Wetterantworten nur vorübergehend zur Bandbreiteneinsparung; es werden keine personenbezogenen Daten gespeichert, verknüpft oder verfolgt.
 
 ### Was das Gerät verlässt
-- Vorhersagen — die Koordinaten eines Startplatzes werden per HTTPS an Open-Meteo (api.open-meteo.com) gesendet, um die Vorhersage zu holen, und an dessen Höhen-Endpunkt, wenn eine Platzhöhe ergänzt wird.
+- Vorhersagen — die Koordinaten eines Startplatzes werden per HTTPS an unseren Edge-Dienst (tinycraftlabhq.com) gesendet, der sie an Open-Meteo (api.open-meteo.com) weiterleitet. Die Höhenabfrage erreicht Open-Meteo weiterhin direkt, wenn eine Platzhöhe ergänzt wird.
 - Karten- und Geländekacheln — Kacheln kommen von OpenFreeMap, die Geländedarstellung aus dem öffentlichen AWS-Terrain-Tiles-Datensatz. Solche Anfragen können die ungefähre Region verraten, die du ansiehst.
 - Käufe (nur iOS) — Abonnements werden vollständig von Apple über den App Store abgerechnet und geprüft. Wir erhalten nur den Abo-Status, niemals deine Zahlungsdaten. Die Android-Fassung ist derzeit kostenlos und initialisiert kein Zahlungs-SDK.
 - Diese Anfragen enthalten kein Konto, keinen Namen, keine Geräte- oder Werbe-ID — nur Koordinaten. Sonst verlässt nichts dein Gerät.
@@ -265,10 +265,10 @@ Der aktuelle Text steht immer unter https://jecry.github.io/thermalcast-privacy/
 - Aucun SDK tiers d'analyse ou de rapport d'incident.
 - Pas de Bluetooth — l'app ne demande jamais l'accès Bluetooth et ne s'apparie jamais à des instruments externes.
 - Aucun identifiant utilisé pour le suivi — nous ne lisons pas l'identifiant Android, l'IMEI ni l'identifiant publicitaire sur Android, et nous ne demandons jamais l'autorisation de suivi iOS (IDFA).
-- Aucun serveur propre — rien n'est téléversé vers une infrastructure que nous exploitons.
+- Service périphérique propre — les requêtes météo sont relayées via notre service périphérique (tinycraftlabhq.com) vers Open-Meteo. Il ne met en cache les réponses météo que temporairement pour économiser la bande passante ; aucune donnée personnelle n'est stockée, liée ou suivie.
 
 ### Ce qui quitte votre appareil
-- Prévisions — les coordonnées d'un site sont envoyées en HTTPS à Open-Meteo (api.open-meteo.com) pour obtenir la prévision, et à son point d'accès d'altitude lorsqu'une altitude de site est renseignée.
+- Prévisions — les coordonnées d'un site sont envoyées en HTTPS à notre service périphérique (tinycraftlabhq.com), qui les relaie vers Open-Meteo (api.open-meteo.com). La recherche d'altitude contacte toujours Open-Meteo directement lorsqu'une altitude de site est renseignée.
 - Tuiles de carte et de relief — les tuiles viennent d'OpenFreeMap et le relief du jeu de données public AWS Terrain Tiles. De telles requêtes peuvent révéler la zone approximative que vous consultez.
 - Achats (iOS uniquement) — les abonnements sont facturés et validés entièrement par Apple via l'App Store. Nous ne recevons qu'un statut d'abonnement, jamais vos données de paiement. La version Android est actuellement gratuite et n'initialise aucun SDK de paiement.
 - Ces requêtes ne contiennent aucun compte, nom, identifiant d'appareil ou publicitaire — seulement des coordonnées. Rien d'autre ne quitte votre appareil.
@@ -326,10 +326,10 @@ Le texte à jour est toujours disponible sur https://jecry.github.io/thermalcast
 - Nessun SDK di analisi o di segnalazione crash di terze parti.
 - Nessun Bluetooth — l'app non chiede mai l'accesso Bluetooth e non si associa mai a strumenti esterni.
 - Nessun identificativo usato per il tracciamento — su Android non leggiamo Android ID, IMEI o l'identificatore pubblicitario; su iOS non chiediamo mai l'autorizzazione al tracciamento (IDFA).
-- Nessun server nostro — nulla viene caricato su infrastrutture che gestiamo noi.
+- Servizio edge proprio — le richieste meteo vengono inoltrate tramite il nostro servizio edge (tinycraftlabhq.com) a Open-Meteo. Le risposte meteo vengono memorizzate nella cache solo temporaneamente per risparmiare banda; nessun dato personale viene archiviato, collegato o tracciato.
 
 ### Cosa lascia il dispositivo
-- Previsioni — le coordinate del sito vengono inviate in HTTPS a Open-Meteo (api.open-meteo.com) per ottenere la previsione, e al suo endpoint di quota quando viene compilata l'altitudine del sito.
+- Previsioni — le coordinate del sito vengono inviate in HTTPS al nostro servizio edge (tinycraftlabhq.com), che le inoltra a Open-Meteo (api.open-meteo.com). La ricerca quota contatta ancora Open-Meteo direttamente quando viene compilata l'altitudine del sito.
 - Tile di mappa e di rilievo — le tile vengono richieste a OpenFreeMap e il rilievo al dataset pubblico AWS Terrain Tiles. Queste richieste possono rivelare l'area approssimativa che stai guardando.
 - Acquisti (solo iOS) — gli abbonamenti sono fatturati e convalidati interamente da Apple tramite l'App Store. Riceviamo solo lo stato dell'abbonamento, mai i tuoi dati di pagamento. La versione Android è attualmente gratuita e non inizializza alcun SDK di pagamento.
 - Queste richieste non contengono account, nome, identificativo del dispositivo o pubblicitario — solo coordinate. Nient'altro lascia il dispositivo.
@@ -387,10 +387,10 @@ Il testo aggiornato è sempre disponibile su https://jecry.github.io/thermalcast
 - Sin SDK de analítica ni de informes de fallos de terceros.
 - Sin Bluetooth — la app nunca pide acceso Bluetooth y nunca se empareja con instrumentos externos.
 - Sin identificadores usados para seguimiento — no leemos el ID de Android, el IMEI ni el identificador publicitario en Android, y nunca solicitamos el permiso de seguimiento de iOS (IDFA).
-- Sin servidor propio — no se sube nada a infraestructura que operemos nosotros.
+- Servicio periférico propio — las solicitudes de pronóstico se retransmiten a Open-Meteo a través de nuestro servicio periférico (tinycraftlabhq.com). Solo almacena en caché las respuestas meteorológicas temporalmente para ahorrar ancho de banda; no almacena, vincula ni rastrea datos personales.
 
 ### Lo que sale del dispositivo
-- Previsiones — las coordenadas del sitio se envían por HTTPS a Open-Meteo (api.open-meteo.com) para obtener el pronóstico, y a su endpoint de elevación cuando se rellena la altitud del sitio.
+- Previsiones — las coordenadas del sitio se envían por HTTPS a nuestro servicio periférico (tinycraftlabhq.com), que las retransmite a Open-Meteo (api.open-meteo.com). La consulta de elevación sigue contactando a Open-Meteo directamente cuando se rellena la altitud del sitio.
 - Tiles de mapa y relieve — las tiles se solicitan a OpenFreeMap y el relieve al conjunto público AWS Terrain Tiles. Estas peticiones pueden revelar la zona aproximada que estás viendo.
 - Compras (solo iOS) — las suscripciones se facturan y validan íntegramente por Apple a través del App Store. Solo recibimos el estado de la suscripción, nunca tus datos de pago. La versión Android es gratuita y no inicializa ningún SDK de pago.
 - Estas peticiones no incluyen cuenta, nombre, identificador de dispositivo ni publicitario — solo coordenadas. Nada más sale del dispositivo.
@@ -448,10 +448,10 @@ El texto vigente está siempre en https://jecry.github.io/thermalcast-privacy/. 
 - Sem SDK de análise ou de relatório de falhas de terceiros.
 - Sem Bluetooth — o app nunca pede acesso Bluetooth e nunca se pareia com instrumentos externos.
 - Sem identificadores usados para rastreamento — não lemos o Android ID, o IMEI nem o identificador publicitário no Android, e nunca solicitamos a permissão de rastreamento do iOS (IDFA).
-- Sem servidor próprio — nada é enviado para infraestrutura que operamos.
+- Serviço de borda próprio — os pedidos de previsão são encaminhados ao Open-Meteo através do nosso serviço de borda (tinycraftlabhq.com). Ele apenas armazena em cache as respostas meteorológicas temporariamente para poupar largura de banda; nenhum dado pessoal é armazenado, associado ou rastreado.
 
 ### O que sai do dispositivo
-- Previsões — as coordenadas do local são enviadas por HTTPS ao Open-Meteo (api.open-meteo.com) para buscar a previsão, e ao seu endpoint de elevação quando a altitude do local é preenchida.
+- Previsões — as coordenadas do local são enviadas por HTTPS ao nosso serviço de borda (tinycraftlabhq.com), que as encaminha ao Open-Meteo (api.open-meteo.com). A consulta de elevação continua a contactar o Open-Meteo diretamente quando a altitude do local é preenchida.
 - Tiles de mapa e relevo — os tiles vêm do OpenFreeMap e o relevo do conjunto público AWS Terrain Tiles. Essas requisições podem revelar a região aproximada que você está vendo.
 - Compras (somente iOS) — as assinaturas são cobradas e validadas inteiramente pela Apple na App Store. Recebemos apenas o status da assinatura, nunca seus dados de pagamento. A versão Android é gratuita e não inicializa nenhum SDK de pagamento.
 - Essas requisições não levam conta, nome, identificador de dispositivo ou publicitário — apenas coordenadas. Nada mais sai do dispositivo.
@@ -509,10 +509,10 @@ O texto atual está sempre em https://jecry.github.io/thermalcast-privacy/. Se o
 - Üçüncü taraf analitik veya çökme raporu SDK'sı yok.
 - Bluetooth yok — uygulama hiç Bluetooth izni istemez ve harici cihazlarla eşleşmez.
 - İzleme için kullanılan tanımlayıcı yok — Android'de Android ID, IMEI veya reklam tanımlayıcısını okumuyoruz ve iOS'ta izleme iznini (IDFA) hiç istemiyoruz.
-- Kendimize ait sunucu yok — işlettiğimiz bir altyapıya hiçbir şey yüklenmez.
+- Kendi kenar servisimiz — hava tahmini istekleri kenar servisimiz (tinycraftlabhq.com) üzerinden Open-Meteo'ya iletilir. Bant genişliğini korumak için hava yanıtlarını yalnızca geçici olarak önbelleğe alır; hiçbir kişisel veri saklanmaz, ilişkilendirilmez veya izlenmez.
 
 ### Cihazdan çıkanlar
-- Tahminler — hava tahminini almak için saha koordinatları HTTPS ile Open-Meteo'ya (api.open-meteo.com), saha irtifası doldurulurken de yükseklik uç noktasına gönderilir.
+- Tahminler — bir sahanın koordinatları HTTPS ile kenar servisimize (tinycraftlabhq.com) gönderilir ve servis bunları Open-Meteo'ya (api.open-meteo.com) iletir. Yükseklik sorgusu, saha irtifası doldurulduğunda doğrudan Open-Meteo'ya ulaşmaya devam eder.
 - Harita ve arazi karoları — karolar OpenFreeMap'ten, arazi gölgelendirmesi herkese açık AWS Terrain Tiles veri kümesinden gelir. Bu istekler baktığınız yaklaşık bölgeyi belli edebilir.
 - Satın almalar (yalnızca iOS) — abonelikler tamamen Apple tarafından App Store üzerinden faturalanır ve doğrulanır. Yalnızca abonelik durumunu alırız, ödeme bilgilerinizi asla almayız. Android sürümü şu anda ücretsizdir ve hiçbir ödeme SDK'sı başlatmaz.
 - Bu isteklerde hesap, ad, cihaz veya reklam tanımlayıcısı bulunmaz — yalnızca koordinatlar. Bunun dışında cihazınızdan hiçbir şey çıkmaz.
@@ -573,7 +573,7 @@ Güncel metin her zaman https://jecry.github.io/thermalcast-privacy/ adresindedi
 - 自社サーバーなし —— 当社が運用するインフラにアップロードされるものはありません。
 
 ### 端末外に出るデータ
-- 予報 —— 予報の取得のため、場地の座標を HTTPS で Open-Meteo（api.open-meteo.com）へ送信します。場地の標高を補完するときは標高エンドポイントへも送信します。
+- 予報 —— 場地の座標は HTTPS で当社のエッジサービス（tinycraftlabhq.com）へ送信され、そこから Open-Meteo（api.open-meteo.com）へ中継されます。標高の照会は場地の標高を補完するときは引き続き Open-Meteo へ直接送信します。
 - 地図・地形タイル —— 地図タイルは OpenFreeMap、地形表現は公開データセット AWS Terrain Tiles から取得します。これらのリクエストは、あなたが見ている大まかな地域を示す可能性があります。
 - 購入（iOS のみ）—— サブスクリプションは Apple が App Store を通じて課金・検証をすべて行います。当社が受け取るのは購読状態のみで、支払い情報を受け取ることはありません。Android 版は現在無料で、支払い SDK も初期化していません。
 - これらのリクエストに、アカウント・氏名・端末識別子・広告識別子は含まれません —— 含まれるのは座標だけです。これ以外に端末外へ出るものはありません。
@@ -634,7 +634,7 @@ ThermalCast は 13 歳未満の子どもを対象としておらず、意図的�
 - 자체 서버 없음 — 우리가 운영하는 인프라에는 아무것도 업로드되지 않습니다.
 
 ### 기기를 나가는 데이터
-- 예보 — 예보를 받기 위해 사이트 좌표를 HTTPS로 Open-Meteo(api.open-meteo.com)에 보냅니다. 사이트 고도를 채울 때는 고도 엔드포인트에도 보냅니다.
+- 예보 — 사이트 좌표는 HTTPS로 당사의 엣지 서비스(tinycraftlabhq.com)에 전송되고, 서비스가 Open-Meteo(api.open-meteo.com)에 전달합니다. 고도 조회는 사이트 고도를 채울 때 계속 Open-Meteo에 직접 연결됩니다.
 - 지도 및 지형 타일 — 지도 타일은 OpenFreeMap, 지형 음영은 공개 데이터셋 AWS Terrain Tiles에서 가져옵니다. 이 요청은 사용자가 보고 있는 대략적인 지역을 드러낼 수 있습니다.
 - 구매(iOS 전용) — 구독은 Apple이 App Store를 통해 전적으로 청구하고 검증합니다. 우리는 구독 상태만 받으며 결제 정보는 절대 받지 않습니다. Android 버전은 현재 무료이며 어떤 결제 SDK도 초기화하지 않습니다.
 - 이 요청에는 계정, 이름, 기기 식별자, 광고 식별자가 포함되지 않습니다 — 좌표만 포함됩니다. 그 밖에 기기를 나가는 것은 없습니다.
@@ -695,7 +695,7 @@ ThermalCast는 13세 미만 아동을 대상으로 하지 않으며, 의도적�
 - Ni našega strežnika — nič se ne nalaga na infrastrukturo, ki jo upravljamo.
 
 ### Kaj zapusti napravo
-- Napovedi — koordinate lokacije se prek HTTPS pošljejo na Open-Meteo (api.open-meteo.com) za pridobitev napovedi, in na njegov končni točki za višino, ko se vpiše nadmorska višina lokacije.
+- Napovedi — koordinate lokacije se prek HTTPS pošljejo našemu robnemu servisu (tinycraftlabhq.com), ki jih posreduje Open-Meteo (api.open-meteo.com). Poizvedba višine še vedno neposredno doseže Open-Meteo, ko se vpiše nadmorska višina lokacije.
 - Ploščice zemljevida in reliefa — ploščice prihajajo iz OpenFreeMap, relief pa iz javnega nabora AWS Terrain Tiles. Takšne zahteve lahko razkrijejo približno območje, ki si ga ogledujete.
 - Nakupi (samo iOS) — naročnine v celoti zaračuna in preveri Apple prek trgovine App Store. Prejmemo samo stanje naročnine, nikoli vaših plačilnih podatkov. Različica za Android je trenutno brezplačna in ne inicializira nobenega SDK-ja za plačila.
 - Te zahteve ne vsebujejo računa, imena, identifikatorja naprave ali oglaševalskega identifikatorja — samo koordinate. Nič drugega ne zapusti naprave.
