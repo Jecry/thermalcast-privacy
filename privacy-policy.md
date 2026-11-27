@@ -1,6 +1,6 @@
 # ThermalCast 隐私政策 / Privacy Policy
 
-**最后更新 / Last updated：2026-11-25**
+**最后更新 / Last updated：2026-11-27**
 **适用范围：** Android「飞伞天气」`com.thermalcast.app` 与 iOS「ThermalCast」
 
 两版共用同一套数据处理逻辑，平台差异已在正文中逐条标注（iOS / Android）。
@@ -25,7 +25,7 @@
 
 ### 会离开设备的数据
 - 天气预报 —— 场地坐标经 HTTPS 发给我们运营的边缘服务（tinycraftlabhq.com），再由它转发给 Open-Meteo（api.open-meteo.com）以获取预报；回填场地海拔时仍直接调用其高程接口。
-- 地图与地形瓦片 —— 地图瓦片来自 OpenFreeMap，地形晕渲来自公开的 AWS Terrain Tiles 数据集。这类请求会暴露你正在查看的大致区域。
+- · 地图与地形瓦片 —— 地图瓦片来自 OpenFreeMap，地形晕渲来自公开的 AWS Terrain Tiles 数据集。这类请求会暴露你正在查看的大致区域。 3D 飞行回放会请求覆盖已记录航迹范围的地形瓦片来绘制三维地形；航迹本身始终留在本机，从不上传。 3D 回放中的卫星影像来自 NASA GIBS（Landsat WELD，公有领域数据集），同样只请求已记录航迹范围；航迹本身从不上传。
 - 购买（仅 iOS）—— 订阅完全由 Apple 通过 App Store 计费与校验。我们只拿到订阅状态，永远不会拿到你的支付信息。Android 版当前免费，且未初始化任何支付 SDK。
 - 这些请求不含账号、姓名、设备或广告标识符，只有坐标。除此之外没有任何数据离开你的设备。
 
@@ -57,7 +57,7 @@ ThermalCast 不面向 13 岁以下儿童，我们也不会有意收集他们的�
 
 ### 数据来源
 - 天气与高程 —— Open-Meteo（CC BY 4.0）；高程派生自 Copernicus DEM GLO-90 © EU-ESA。
-- 地形晕渲 —— AWS Terrain Tiles，公开高程数据集。
+- · 卫星影像 —— NASA GIBS（Landsat WELD，公有领域）。
 - 地图瓦片 —— © OpenStreetMap 贡献者，由 OpenFreeMap 提供。
 - 空域 —— 随包数据派生自 openAIP（openaip.net），离线读取。
 
@@ -86,7 +86,7 @@ ThermalCast 不面向 13 岁以下儿童，我们也不会有意收集他们的�
 
 ### 會離開裝置的資料
 - 天氣預報 —— 場地座標經 HTTPS 傳送給我們營運的邊緣服務（tinycraftlabhq.com），再由它轉送至 Open-Meteo（api.open-meteo.com）以取得預報；回填場地海拔時仍直接呼叫其高程介面。
-- 地圖與地形圖磚 —— 地圖圖磚來自 OpenFreeMap，地形暈渲來自公開的 AWS Terrain Tiles 資料集。這類請求會透露你正在查看的大致區域。
+- · 地圖與地形圖磚 —— 地圖圖磚來自 OpenFreeMap，地形暈渲來自公開的 AWS Terrain Tiles 資料集。這類請求會透露你正在查看的大致區域。 3D 飛行回放會請求涵蓋已記錄航跡範圍的地形圖磚來繪製三維地形；航跡本身始終留在本機，從不上傳。 3D 回放中的衛星影像來自 NASA GIBS（Landsat WELD，公有領域資料集），同樣只請求已記錄航跡範圍；航跡本身從不上傳。
 - 購買（僅 iOS）—— 訂閱完全由 Apple 透過 App Store 計費與驗證。我們只取得訂閱狀態，永遠不會取得你的付款資訊。Android 版目前免費，且未初始化任何支付 SDK。
 - 這些請求不含帳號、姓名、裝置或廣告識別碼，只有座標。除此之外沒有任何資料離開你的裝置。
 
@@ -118,7 +118,7 @@ ThermalCast 不面向 13 歲以下兒童，我們也不會有意收集他們的�
 
 ### 資料來源
 - 天氣與高程 —— Open-Meteo（CC BY 4.0）；高程衍生自 Copernicus DEM GLO-90 © EU-ESA。
-- 地形暈渲 —— AWS Terrain Tiles，公開高程資料集。
+- · 衛星影像 —— NASA GIBS（Landsat WELD，公有領域）。
 - 地圖圖磚 —— © OpenStreetMap 貢獻者，由 OpenFreeMap 提供。
 - 空域 —— 隨附資料衍生自 openAIP（openaip.net），離線讀取。
 
@@ -147,7 +147,7 @@ ThermalCast 不面向 13 歲以下兒童，我們也不會有意收集他們的�
 
 ### What leaves your device
 - Forecasts — the coordinates of a site are sent over HTTPS to our edge service (tinycraftlabhq.com), which relays them to Open-Meteo (api.open-meteo.com) to fetch the forecast. Elevation lookup still contacts Open-Meteo directly when a site altitude is filled in.
-- Map and terrain tiles — tiles are requested from OpenFreeMap and terrain shading from the public AWS Terrain Tiles dataset. Such requests can reveal the approximate area you are looking at.
+- · Map and terrain tiles — tiles are requested from OpenFreeMap and terrain shading from the public AWS Terrain Tiles dataset. Such requests can reveal the approximate area you are looking at. 3D flight replay requests terrain tiles covering the recorded route to draw the landscape; the track itself stays on your device and is never uploaded. Satellite imagery in 3D replay is requested from NASA GIBS (Landsat WELD, public domain), likewise only for the recorded route; the track itself is never uploaded.
 - Purchases (iOS only) — subscriptions are billed and validated entirely by Apple through the App Store. We receive a subscription status only, never your payment details. The Android version is currently free and initialises no payment SDK.
 - These requests carry no account, name, device or advertising identifier — only coordinates. Nothing else leaves your device.
 
@@ -179,7 +179,7 @@ ThermalCast is not directed to children under 13, and we do not knowingly collec
 
 ### Data sources
 - Weather and elevation — Open-Meteo (CC BY 4.0); elevation is derived from Copernicus DEM GLO-90 © EU-ESA.
-- Terrain shading — AWS Terrain Tiles, a public elevation dataset.
+- · Satellite imagery — NASA GIBS (Landsat WELD, public domain).
 - Map tiles — © OpenStreetMap contributors, served by OpenFreeMap.
 - Airspace — the bundled set is derived from openAIP (openaip.net) and is read offline.
 
@@ -208,7 +208,7 @@ The current text is always available at https://jecry.github.io/thermalcast-priv
 
 ### Was das Gerät verlässt
 - Vorhersagen — die Koordinaten eines Startplatzes werden per HTTPS an unseren Edge-Dienst (tinycraftlabhq.com) gesendet, der sie an Open-Meteo (api.open-meteo.com) weiterleitet. Die Höhenabfrage erreicht Open-Meteo weiterhin direkt, wenn eine Platzhöhe ergänzt wird.
-- Karten- und Geländekacheln — Kacheln kommen von OpenFreeMap, die Geländedarstellung aus dem öffentlichen AWS-Terrain-Tiles-Datensatz. Solche Anfragen können die ungefähre Region verraten, die du ansiehst.
+- · Karten- und Geländekacheln — Kacheln kommen von OpenFreeMap, die Geländedarstellung aus dem öffentlichen AWS-Terrain-Tiles-Datensatz. Solche Anfragen können die ungefähre Region verraten, die du ansiehst. Die 3D-Flugwiedergabe lädt Geländekacheln für den Bereich der aufgezeichneten Route, um die Landschaft zu zeichnen; die Spur selbst bleibt auf deinem Gerät und wird nie hochgeladen. Satellitenbilder in der 3D-Wiedergabe werden von NASA GIBS (Landsat WELD, öffentlich zugänglich) angefordert, ebenfalls nur für die aufgezeichnete Route; die Spur selbst wird nie hochgeladen.
 - Käufe (nur iOS) — Abonnements werden vollständig von Apple über den App Store abgerechnet und geprüft. Wir erhalten nur den Abo-Status, niemals deine Zahlungsdaten. Die Android-Fassung ist derzeit kostenlos und initialisiert kein Zahlungs-SDK.
 - Diese Anfragen enthalten kein Konto, keinen Namen, keine Geräte- oder Werbe-ID — nur Koordinaten. Sonst verlässt nichts dein Gerät.
 
@@ -240,7 +240,7 @@ ThermalCast richtet sich nicht an Kinder unter 13 Jahren, und wir sammeln nicht 
 
 ### Datenquellen
 - Wetter und Höhe — Open-Meteo (CC BY 4.0); die Höhe stammt aus Copernicus DEM GLO-90 © EU-ESA.
-- Geländedarstellung — AWS Terrain Tiles, ein öffentlicher Höhendatensatz.
+- · Satellitenbilder — NASA GIBS (Landsat WELD, öffentlich zugänglich).
 - Kartenkacheln — © OpenStreetMap-Mitwirkende, bereitgestellt von OpenFreeMap.
 - Lufträume — der mitgelieferte Datensatz stammt von openAIP (openaip.net) und wird offline gelesen.
 
@@ -269,7 +269,7 @@ Der aktuelle Text steht immer unter https://jecry.github.io/thermalcast-privacy/
 
 ### Ce qui quitte votre appareil
 - Prévisions — les coordonnées d'un site sont envoyées en HTTPS à notre service périphérique (tinycraftlabhq.com), qui les relaie vers Open-Meteo (api.open-meteo.com). La recherche d'altitude contacte toujours Open-Meteo directement lorsqu'une altitude de site est renseignée.
-- Tuiles de carte et de relief — les tuiles viennent d'OpenFreeMap et le relief du jeu de données public AWS Terrain Tiles. De telles requêtes peuvent révéler la zone approximative que vous consultez.
+- · Tuiles de carte et de relief — les tuiles viennent d'OpenFreeMap et le relief du jeu de données public AWS Terrain Tiles. De telles requêtes peuvent révéler la zone approximative que vous consultez. La relecture de vol 3D demande des tuiles de relief couvrant l'itinéraire enregistré pour dessiner le paysage ; la trace elle-même reste sur votre appareil et n'est jamais téléversée. Les images satellite de la relecture 3D sont demandées à NASA GIBS (Landsat WELD, domaine public), également pour l'itinéraire enregistré uniquement ; la trace elle-même n'est jamais téléversée.
 - Achats (iOS uniquement) — les abonnements sont facturés et validés entièrement par Apple via l'App Store. Nous ne recevons qu'un statut d'abonnement, jamais vos données de paiement. La version Android est actuellement gratuite et n'initialise aucun SDK de paiement.
 - Ces requêtes ne contiennent aucun compte, nom, identifiant d'appareil ou publicitaire — seulement des coordonnées. Rien d'autre ne quitte votre appareil.
 
@@ -301,7 +301,7 @@ ThermalCast ne s'adresse pas aux enfants de moins de 13 ans et nous ne collecton
 
 ### Sources des données
 - Météo et altitude — Open-Meteo (CC BY 4.0) ; l'altitude dérive de Copernicus DEM GLO-90 © EU-ESA.
-- Relief — AWS Terrain Tiles, un jeu de données d'altitude public.
+- · Images satellite — NASA GIBS (Landsat WELD, domaine public).
 - Tuiles de carte — © contributeurs OpenStreetMap, servies par OpenFreeMap.
 - Espaces aériens — le jeu fourni dérive d'openAIP (openaip.net) et est lu hors ligne.
 
@@ -330,7 +330,7 @@ Le texte à jour est toujours disponible sur https://jecry.github.io/thermalcast
 
 ### Cosa lascia il dispositivo
 - Previsioni — le coordinate del sito vengono inviate in HTTPS al nostro servizio edge (tinycraftlabhq.com), che le inoltra a Open-Meteo (api.open-meteo.com). La ricerca quota contatta ancora Open-Meteo direttamente quando viene compilata l'altitudine del sito.
-- Tile di mappa e di rilievo — le tile vengono richieste a OpenFreeMap e il rilievo al dataset pubblico AWS Terrain Tiles. Queste richieste possono rivelare l'area approssimativa che stai guardando.
+- · Tile di mappa e di rilievo — le tile vengono richieste a OpenFreeMap e il rilievo al dataset pubblico AWS Terrain Tiles. Queste richieste possono rivelare l'area approssimativa che stai guardando. La riproduzione di volo 3D richiede tile di rilievo che coprono il percorso registrato per disegnare il paesaggio; la traccia stessa resta sul tuo dispositivo e non viene mai caricata. Le immagini satellitari nella riproduzione 3D sono richieste a NASA GIBS (Landsat WELD, pubblico dominio), anch'esse solo per il percorso registrato; la traccia stessa non viene mai caricata.
 - Acquisti (solo iOS) — gli abbonamenti sono fatturati e convalidati interamente da Apple tramite l'App Store. Riceviamo solo lo stato dell'abbonamento, mai i tuoi dati di pagamento. La versione Android è attualmente gratuita e non inizializza alcun SDK di pagamento.
 - Queste richieste non contengono account, nome, identificativo del dispositivo o pubblicitario — solo coordinate. Nient'altro lascia il dispositivo.
 
@@ -362,7 +362,7 @@ ThermalCast non è destinato ai bambini sotto i 13 anni e non raccogliamo consap
 
 ### Fonti dei dati
 - Meteo e quota — Open-Meteo (CC BY 4.0); la quota deriva da Copernicus DEM GLO-90 © EU-ESA.
-- Rilievo — AWS Terrain Tiles, un dataset di elevazione pubblico.
+- · Immagini satellitari — NASA GIBS (Landsat WELD, pubblico dominio).
 - Tile di mappa — © collaboratori di OpenStreetMap, servite da OpenFreeMap.
 - Spazi aerei — il set incluso deriva da openAIP (openaip.net) ed è letto offline.
 
@@ -391,7 +391,7 @@ Il testo aggiornato è sempre disponibile su https://jecry.github.io/thermalcast
 
 ### Lo que sale del dispositivo
 - Previsiones — las coordenadas del sitio se envían por HTTPS a nuestro servicio periférico (tinycraftlabhq.com), que las retransmite a Open-Meteo (api.open-meteo.com). La consulta de elevación sigue contactando a Open-Meteo directamente cuando se rellena la altitud del sitio.
-- Tiles de mapa y relieve — las tiles se solicitan a OpenFreeMap y el relieve al conjunto público AWS Terrain Tiles. Estas peticiones pueden revelar la zona aproximada que estás viendo.
+- · Tiles de mapa y relieve — las tiles se solicitan a OpenFreeMap y el relieve al conjunto público AWS Terrain Tiles. Estas peticiones pueden revelar la zona aproximada que estás viendo. La reproducción de vuelo 3D solicita tiles de relieve que cubren la ruta grabada para dibujar el paisaje; la traza en sí permanece en tu dispositivo y nunca se sube. Las imágenes satelitales en la reproducción 3D se solicitan a NASA GIBS (Landsat WELD, dominio público), igualmente solo para la ruta grabada; la traza en sí nunca se sube.
 - Compras (solo iOS) — las suscripciones se facturan y validan íntegramente por Apple a través del App Store. Solo recibimos el estado de la suscripción, nunca tus datos de pago. La versión Android es gratuita y no inicializa ningún SDK de pago.
 - Estas peticiones no incluyen cuenta, nombre, identificador de dispositivo ni publicitario — solo coordenadas. Nada más sale del dispositivo.
 
@@ -423,7 +423,7 @@ ThermalCast no se dirige a menores de 13 años y no recopilamos intencionadament
 
 ### Fuentes de los datos
 - Tiempo y altitud — Open-Meteo (CC BY 4.0); la altitud procede de Copernicus DEM GLO-90 © EU-ESA.
-- Relieve — AWS Terrain Tiles, un conjunto de elevación público.
+- · Imágenes satelitales — NASA GIBS (Landsat WELD, dominio público).
 - Tiles de mapa — © colaboradores de OpenStreetMap, servidas por OpenFreeMap.
 - Espacios aéreos — el conjunto incluido procede de openAIP (openaip.net) y se lee sin conexión.
 
@@ -452,7 +452,7 @@ El texto vigente está siempre en https://jecry.github.io/thermalcast-privacy/. 
 
 ### O que sai do dispositivo
 - Previsões — as coordenadas do local são enviadas por HTTPS ao nosso serviço de borda (tinycraftlabhq.com), que as encaminha ao Open-Meteo (api.open-meteo.com). A consulta de elevação continua a contactar o Open-Meteo diretamente quando a altitude do local é preenchida.
-- Tiles de mapa e relevo — os tiles vêm do OpenFreeMap e o relevo do conjunto público AWS Terrain Tiles. Essas requisições podem revelar a região aproximada que você está vendo.
+- · Tiles de mapa e relevo — os tiles vêm do OpenFreeMap e o relevo do conjunto público AWS Terrain Tiles. Essas requisições podem revelar a região aproximada que você está vendo. A reprodução de voo 3D solicita tiles de relevo que cobrem a rota gravada para desenhar a paisagem; a trilha em si fica no seu dispositivo e nunca é enviada. As imagens de satélite na reprodução 3D são solicitadas ao NASA GIBS (Landsat WELD, domínio público), igualmente apenas para a rota gravada; a trilha em si nunca é enviada.
 - Compras (somente iOS) — as assinaturas são cobradas e validadas inteiramente pela Apple na App Store. Recebemos apenas o status da assinatura, nunca seus dados de pagamento. A versão Android é gratuita e não inicializa nenhum SDK de pagamento.
 - Essas requisições não levam conta, nome, identificador de dispositivo ou publicitário — apenas coordenadas. Nada mais sai do dispositivo.
 
@@ -484,7 +484,7 @@ O ThermalCast não se destina a menores de 13 anos e não coletamos intencionalm
 
 ### Fontes dos dados
 - Tempo e elevação — Open-Meteo (CC BY 4.0); a elevação deriva de Copernicus DEM GLO-90 © EU-ESA.
-- Relevo — AWS Terrain Tiles, um conjunto de elevação público.
+- · Imagens de satélite — NASA GIBS (Landsat WELD, domínio público).
 - Tiles de mapa — © colaboradores do OpenStreetMap, servidos pelo OpenFreeMap.
 - Espaços aéreos — o conjunto incluído deriva de openAIP (openaip.net) e é lido offline.
 
@@ -513,7 +513,7 @@ O texto atual está sempre em https://jecry.github.io/thermalcast-privacy/. Se o
 
 ### Cihazdan çıkanlar
 - Tahminler — bir sahanın koordinatları HTTPS ile kenar servisimize (tinycraftlabhq.com) gönderilir ve servis bunları Open-Meteo'ya (api.open-meteo.com) iletir. Yükseklik sorgusu, saha irtifası doldurulduğunda doğrudan Open-Meteo'ya ulaşmaya devam eder.
-- Harita ve arazi karoları — karolar OpenFreeMap'ten, arazi gölgelendirmesi herkese açık AWS Terrain Tiles veri kümesinden gelir. Bu istekler baktığınız yaklaşık bölgeyi belli edebilir.
+- · Harita ve arazi karoları — karolar OpenFreeMap'ten, arazi gölgelendirmesi herkese açık AWS Terrain Tiles veri kümesinden gelir. Bu istekler baktığınız yaklaşık bölgeyi belli edebilir. 3D uçuş tekrarı, manzarayı çizmek için kaydedilen rotayı kapsayan arazi karoları ister; izin kendisi cihazınızda kalır ve asla yüklenmez. 3D tekrardaki uydu görüntüleri NASA GIBS'ten (Landsat WELD, kamuya açık) istenir; yine yalnızca kaydedilen rota için; izin kendisi asla yüklenmez.
 - Satın almalar (yalnızca iOS) — abonelikler tamamen Apple tarafından App Store üzerinden faturalanır ve doğrulanır. Yalnızca abonelik durumunu alırız, ödeme bilgilerinizi asla almayız. Android sürümü şu anda ücretsizdir ve hiçbir ödeme SDK'sı başlatmaz.
 - Bu isteklerde hesap, ad, cihaz veya reklam tanımlayıcısı bulunmaz — yalnızca koordinatlar. Bunun dışında cihazınızdan hiçbir şey çıkmaz.
 
@@ -545,7 +545,7 @@ ThermalCast 13 yaş altı çocuklara yönelik değildir ve onlardan bilerek kiş
 
 ### Veri kaynakları
 - Hava ve yükseklik — Open-Meteo (CC BY 4.0); yükseklik Copernicus DEM GLO-90 © EU-ESA'dan türetilir.
-- Arazi gölgelendirme — AWS Terrain Tiles, herkese açık yükseklik veri kümesi.
+- · Uydu görüntüleri — NASA GIBS (Landsat WELD, kamuya açık).
 - Harita karoları — © OpenStreetMap katkıda bulunanlar, OpenFreeMap tarafından sunulur.
 - Hava sahaları — birlikte gelen veri kümesi openAIP'ten (openaip.net) türetilir ve çevrimdışı okunur.
 
@@ -570,11 +570,11 @@ Güncel metin her zaman https://jecry.github.io/thermalcast-privacy/ adresindedi
 - サードパーティの解析・クラッシュレポート SDK なし。
 - Bluetooth なし —— Bluetooth のアクセス権を要求することも、外部計器とペアリングすることもありません。
 - 追跡用の識別子なし —— Android では Android ID・IMEI・広告識別子を読み取らず、iOS ではトラッキング許可（IDFA）を要求しません。
-- 自社サーバーなし —— 当社が運用するインフラにアップロードされるものはありません。
+- 自社エッジサービス —— 天気リクエストは当社のエッジサービス（tinycraftlabhq.com）経由で Open-Meteo に中継されます。帯域節約のため天気レスポンスを一時的にキャッシュするだけで、個人データの保存・関連付け・追跡は行いません。
 
 ### 端末外に出るデータ
 - 予報 —— 場地の座標は HTTPS で当社のエッジサービス（tinycraftlabhq.com）へ送信され、そこから Open-Meteo（api.open-meteo.com）へ中継されます。標高の照会は場地の標高を補完するときは引き続き Open-Meteo へ直接送信します。
-- 地図・地形タイル —— 地図タイルは OpenFreeMap、地形表現は公開データセット AWS Terrain Tiles から取得します。これらのリクエストは、あなたが見ている大まかな地域を示す可能性があります。
+- · 地図・地形タイル —— 地図タイルは OpenFreeMap、地形表現は公開データセット AWS Terrain Tiles から取得します。これらのリクエストは、あなたが見ている大まかな地域を示す可能性があります。 3D フライト再生では、記録した航跡の範囲をカバーする地形タイルを取得して三次元地形を描きます。航跡自体は端末内に残り、アップロードされることはありません。 3D 再生の衛星画像は NASA GIBS（Landsat WELD、パブリックドメイン）から取得し、これも記録した航跡の範囲のみです。航跡自体はアップロードされることはありません。
 - 購入（iOS のみ）—— サブスクリプションは Apple が App Store を通じて課金・検証をすべて行います。当社が受け取るのは購読状態のみで、支払い情報を受け取ることはありません。Android 版は現在無料で、支払い SDK も初期化していません。
 - これらのリクエストに、アカウント・氏名・端末識別子・広告識別子は含まれません —— 含まれるのは座標だけです。これ以外に端末外へ出るものはありません。
 
@@ -606,7 +606,7 @@ ThermalCast は 13 歳未満の子どもを対象としておらず、意図的�
 
 ### データの出典
 - 天気と標高 —— Open-Meteo（CC BY 4.0）。標高は Copernicus DEM GLO-90 © EU-ESA に由来します。
-- 地形表現 —— AWS Terrain Tiles（公開標高データセット）。
+- · 衛星画像 —— NASA GIBS（Landsat WELD、パブリックドメイン）。
 - 地図タイル —— © OpenStreetMap 貢献者、配信は OpenFreeMap。
 - 空域 —— 同梱データは openAIP（openaip.net）由来で、オフラインで読み込みます。
 
@@ -631,11 +631,11 @@ ThermalCast は 13 歳未満の子どもを対象としておらず、意図的�
 - 서드파티 분석·크래시 리포트 SDK 없음.
 - 블루투스 없음 — 앱은 블루투스 권한을 요청하지 않으며 외부 기기와 페어링하지 않습니다.
 - 추적용 식별자 없음 — Android에서는 Android ID, IMEI, 광고 식별자를 읽지 않으며, iOS에서는 추적 허용(IDFA)을 요청하지 않습니다.
-- 자체 서버 없음 — 우리가 운영하는 인프라에는 아무것도 업로드되지 않습니다.
+- 자체 엣지 서비스 — 예보 요청은 당사 엣지 서비스(tinycraftlabhq.com)를 통해 Open-Meteo로 전달됩니다. 대역폭 절약을 위해 예보 응답을 일시적으로만 캐시하며, 개인정보를 저장·연결·추적하지 않습니다.
 
 ### 기기를 나가는 데이터
 - 예보 — 사이트 좌표는 HTTPS로 당사의 엣지 서비스(tinycraftlabhq.com)에 전송되고, 서비스가 Open-Meteo(api.open-meteo.com)에 전달합니다. 고도 조회는 사이트 고도를 채울 때 계속 Open-Meteo에 직접 연결됩니다.
-- 지도 및 지형 타일 — 지도 타일은 OpenFreeMap, 지형 음영은 공개 데이터셋 AWS Terrain Tiles에서 가져옵니다. 이 요청은 사용자가 보고 있는 대략적인 지역을 드러낼 수 있습니다.
+- · 지도 및 지형 타일 — 지도 타일은 OpenFreeMap, 지형 음영은 공개 데이터셋 AWS Terrain Tiles에서 가져옵니다. 이 요청은 사용자가 보고 있는 대략적인 지역을 드러낼 수 있습니다. 3D 비행 재생은 기록된 경로를 덮는 지형 타일을 요청하여 3차원 지형을 그립니다. 항적 자체는 기기에 남으며 업로드되지 않습니다. 3D 재생의 위성 이미지는 NASA GIBS(Landsat WELD, 퍼블릭 도메인)에서 요청하며, 마찬가지로 기록된 경로 범위만 해당합니다. 항적 자체는 업로드되지 않습니다.
 - 구매(iOS 전용) — 구독은 Apple이 App Store를 통해 전적으로 청구하고 검증합니다. 우리는 구독 상태만 받으며 결제 정보는 절대 받지 않습니다. Android 버전은 현재 무료이며 어떤 결제 SDK도 초기화하지 않습니다.
 - 이 요청에는 계정, 이름, 기기 식별자, 광고 식별자가 포함되지 않습니다 — 좌표만 포함됩니다. 그 밖에 기기를 나가는 것은 없습니다.
 
@@ -667,7 +667,7 @@ ThermalCast는 13세 미만 아동을 대상으로 하지 않으며, 의도적�
 
 ### 데이터 출처
 - 날씨와 고도 — Open-Meteo(CC BY 4.0). 고도는 Copernicus DEM GLO-90 © EU-ESA에서 파생됩니다.
-- 지형 음영 — AWS Terrain Tiles(공개 고도 데이터셋).
+- · 위성 이미지 — NASA GIBS(Landsat WELD, 퍼블릭 도메인).
 - 지도 타일 — © OpenStreetMap 기여자, OpenFreeMap이 제공.
 - 공역 — 함께 제공되는 데이터는 openAIP(openaip.net)에서 파생되며 오프라인으로 읽습니다.
 
@@ -692,11 +692,11 @@ ThermalCast는 13세 미만 아동을 대상으로 하지 않으며, 의도적�
 - Ni SDK-ja tretjih oseb za analitiko ali poročila o sesutjih.
 - Ni Bluetootha — aplikacija nikoli ne zahteva dostopa do Bluetootha in se nikoli ne povezuje z zunanjimi instrumenti.
 - Ni identifikatorjev za sledenje — na Androidu ne beremo Android ID, IMEI ali oglaševalskega identifikatorja, na iOSu pa nikoli ne zahtevamo dovoljenja za sledenje (IDFA).
-- Ni našega strežnika — nič se ne nalaga na infrastrukturo, ki jo upravljamo.
+- Lastni robni strežnik — vremenske zahteve se prek našega robnega strežnika (tinycraftlabhq.com) posredujejo Open-Meteo. Odzivi se začasno predpomnijo zaradi prihranek pasovne širine, ne shranjujejo pa se osebni podatki.
 
 ### Kaj zapusti napravo
 - Napovedi — koordinate lokacije se prek HTTPS pošljejo našemu robnemu servisu (tinycraftlabhq.com), ki jih posreduje Open-Meteo (api.open-meteo.com). Poizvedba višine še vedno neposredno doseže Open-Meteo, ko se vpiše nadmorska višina lokacije.
-- Ploščice zemljevida in reliefa — ploščice prihajajo iz OpenFreeMap, relief pa iz javnega nabora AWS Terrain Tiles. Takšne zahteve lahko razkrijejo približno območje, ki si ga ogledujete.
+- · Ploščice zemljevida in reliefa — ploščice prihajajo iz OpenFreeMap, relief pa iz javnega nabora AWS Terrain Tiles. Takšne zahteve lahko razkrijejo približno območje, ki si ga ogledujete. 3D predvajanje leta zahteva ploščice reliefa, ki pokrivajo posneto pot, za risanje pokrajine; sama sled ostane na vaši napravi in se nikoli ne naloži. Satelitske slike v 3D predvajanju se zahtevajo od NASA GIBS (Landsat WELD, javna lastnina), prav tako le za posneto pot; sama sled se nikoli ne naloži.
 - Nakupi (samo iOS) — naročnine v celoti zaračuna in preveri Apple prek trgovine App Store. Prejmemo samo stanje naročnine, nikoli vaših plačilnih podatkov. Različica za Android je trenutno brezplačna in ne inicializira nobenega SDK-ja za plačila.
 - Te zahteve ne vsebujejo računa, imena, identifikatorja naprave ali oglaševalskega identifikatorja — samo koordinate. Nič drugega ne zapusti naprave.
 
@@ -728,7 +728,7 @@ ThermalCast ni namenjen otrokom, mlajšim od 13 let, in zavestno ne zbiramo njih
 
 ### Viri podatkov
 - Vreme in višina — Open-Meteo (CC BY 4.0); višina izhaja iz Copernicus DEM GLO-90 © EU-ESA.
-- Relief — AWS Terrain Tiles, javni nabor podatkov o višini.
+- · Satelitske slike — NASA GIBS (Landsat WELD, javna lastnina).
 - Ploščice zemljevida — © sodelavci OpenStreetMap, streže OpenFreeMap.
 - Zračni prostori — priloženi nabor izhaja iz openAIP (openaip.net) in se bere brez povezave.
 
